@@ -29,9 +29,11 @@ Lets extract the allocated partition so that we can work on it without having to
 
 **WARNING** I can't get this to work
 First download the NSRL database
+
 	$ wget http://www.nsrl.nist.gov/voting/20140608/NSRLFile.txt
 
 Then index the database for MD5 (see `-n nsrl_db` in `man sorter` and `man hfind`)
+
 	$ hfind -i nsrl-md5 NSRLFile.txt 
 
 
@@ -82,7 +84,3 @@ And to extract the data, we can simply do the following
 	$ unzip file.zip -d file
 
 **Oups!***, we require a password. Luckily we found one with `cat mmcat disk.dd 02`
-
-
-
-
