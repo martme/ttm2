@@ -17,7 +17,7 @@ Partition `02` starts at sector `0000002048` and is described as `Linux (0x83)`
 Lets extract the allocated partition so that we can work on it without having to type the offset all the time. 
 **WARNING** This takes a long time
 
-    $ dd if disk.dd of=body.dd bs=512 skip=2048 count=6834176
+    $ dd if=disk.dd of=body.dd bs=512 skip=2048 count=6834176
 
 - `if` is the input file
 - `of` is the output file
@@ -31,6 +31,10 @@ Lets extract the allocated partition so that we can work on it without having to
 First download the NSRL database
 
     $ wget http://www.nsrl.nist.gov/voting/20140608/NSRLFile.txt
+
+If you are on OS X mavericks+, and don't have wget, you can download the file using
+
+    $ curl "http://www.nsrl.nist.gov/voting/20140608/NSRLFile.txt" -o "NSRLFile.txt"
 
 Then index the database for MD5 (see `-n nsrl_db` in `man sorter` and `man hfind`)
 
