@@ -47,7 +47,7 @@ First lets start the search from the `home` directory, so we need to find the `m
 
 We get that `585:   home` meaning that the meta addr we want is 585. Lets look at the different users home directories:
 
-    $ fls disk.dd -o 2048 585
+    $ fls -o 2048 disk.dd 585
     d/d 4610:   void
 
 We see that the only user is `void`. Lets see what he has in his home directory `/home/void/`
@@ -75,7 +75,11 @@ Ok, so now we have the inode for the file, if we look in `sorter_output/mismatch
       Image: disk.dd  Inode: 38611
       MD5: a495b7b6b126c09db019bd2c84908f97
 
-We can use the inode to print the contents of the file with `icat`
+Lets look at the metadata for this file, such as timestamps and permissions
+
+    $ istat -o 2048 disk.dd 38611
+
+We can also use the knowledge of the inode to extract the contents of the file with `icat`
 
     $ icat -o 2048 disk.dd 38611 > file.zip
 
