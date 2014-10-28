@@ -84,3 +84,6 @@ And to extract the data, we can simply do the following
     $ unzip file.zip -d file
 
 **Oups!***, we require a password. Luckily we found one with `cat mmcat disk.dd 02`
+
+# Demo of Autopsy and deleted files
+
