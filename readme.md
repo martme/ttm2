@@ -87,3 +87,21 @@ And to extract the data, we can simply do the following
 
 # Demo of Autopsy and deleted files
 
+### Lists the mount points of the disks
+
+    $ diskutil list
+
+### Copy the flash drive
+
+Make sure you are using a write blocker at this point.
+
+    $ sudo dd if=/dev/disk1 of=copy.img conv=notrunc
+
+This will take some time as it will take a bit-by-bit copy of the flash drive image.
+
+### Open Autopsy
+
+- New case
+- Enter case name
+- Open case
+- Add host
